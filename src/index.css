@@ -1,0 +1,222 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* تصميم نظام إدارة المنتجات - ألوان أنيقة مع وضع مظلم */
+
+@layer base {
+  :root {
+    /* نظام ألوان متناسق - تدرجات الأزرق والبنفسجي */
+    
+    /* خلفيات أساسية */
+    --background: 248 250 255;     /* أزرق فاتح جداً */
+    --foreground: 30 41 59;        /* رمادي داكن مريح */
+
+    /* البطاقات والعناصر */
+    --card: 255 255 255;           /* أبيض نقي */
+    --card-foreground: 30 41 59;
+
+    --popover: 255 255 255;
+    --popover-foreground: 30 41 59;
+
+    /* الألوان الأساسية - تدرج أزرق إلى بنفسجي */
+    --primary: 59 130 246;         /* أزرق حيوي */
+    --primary-light: 147 197 253;  /* أزرق فاتح */
+    --primary-dark: 37 99 235;     /* أزرق داكن */
+    --primary-foreground: 255 255 255;
+
+    /* ألوان ثانوية متناسقة */
+    --secondary: 241 245 249;      /* رمادي فاتح */
+    --secondary-foreground: 51 65 85;
+
+    /* ألوان مخففة */
+    --muted: 248 250 252;          /* رمادي فاتح جداً */
+    --muted-foreground: 100 116 139;
+
+    /* لون التأكيد */
+    --accent: 239 246 255;         /* أزرق فاتح جداً */
+    --accent-foreground: 59 130 246;
+
+    /* ألوان الحالة المتناسقة */
+    --destructive: 239 68 68;      /* أحمر مريح */
+    --destructive-foreground: 255 255 255;
+    
+    --warning: 245 158 11;         /* برتقالي ذهبي */
+    --warning-foreground: 255 255 255;
+    
+    --success: 34 197 94;          /* أخضر زمردي */
+    --success-foreground: 255 255 255;
+
+    --info: 59 130 246;            /* أزرق معلوماتي */
+    --info-foreground: 255 255 255;
+
+    /* الحدود والإدخال */
+    --border: 226 232 240;         /* رمادي فاتح */
+    --input: 226 232 240;
+    --ring: 59 130 246;
+
+    /* نصف القطر */
+    --radius: 0.75rem;
+
+    /* التدرجات المتناسقة */
+    --gradient-primary: linear-gradient(135deg, rgb(59 130 246), rgb(147 51 234));
+    --gradient-hero: linear-gradient(135deg, rgb(59 130 246 / 0.9), rgb(147 51 234 / 0.9));
+    --gradient-card: linear-gradient(145deg, rgb(255 255 255), rgb(248 250 252));
+    --gradient-success: linear-gradient(135deg, rgb(34 197 94), rgb(22 163 74));
+    --gradient-warning: linear-gradient(135deg, rgb(245 158 11), rgb(217 119 6));
+    --gradient-info: linear-gradient(135deg, rgb(59 130 246), rgb(29 78 216));
+    --gradient-danger: linear-gradient(135deg, rgb(239 68 68), rgb(220 38 38));
+    
+    /* الظلال المتناسقة */
+    --shadow-soft: 0 1px 3px 0 rgb(59 130 246 / 0.1), 0 1px 2px 0 rgb(59 130 246 / 0.06);
+    --shadow-medium: 0 4px 6px -1px rgb(59 130 246 / 0.1), 0 2px 4px -1px rgb(59 130 246 / 0.06);
+    --shadow-large: 0 10px 15px -3px rgb(59 130 246 / 0.1), 0 4px 6px -2px rgb(59 130 246 / 0.05);
+    --shadow-glow: 0 0 0 1px rgb(59 130 246 / 0.05), 0 1px 0 0 rgb(59 130 246 / 0.05);
+
+    /* الانتقالات السلسة */
+    --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    /* نظام ألوان متناسق للوضع المظلم */
+    
+    /* خلفيات مظلمة أنيقة */
+    --background: 15 23 42;        /* أزرق داكن */
+    --foreground: 241 245 249;     /* رمادي فاتح */
+
+    --card: 30 41 59;              /* رمادي داكن */
+    --card-foreground: 241 245 249;
+
+    --popover: 30 41 59;
+    --popover-foreground: 241 245 249;
+
+    /* ألوان أساسية للوضع المظلم */
+    --primary: 99 102 241;         /* بنفسجي مشرق */
+    --primary-light: 139 92 246;   /* بنفسجي فاتح */
+    --primary-dark: 67 56 202;     /* بنفسجي داكن */
+    --primary-foreground: 255 255 255;
+
+    --secondary: 51 65 85;         /* رمادي متوسط */
+    --secondary-foreground: 241 245 249;
+
+    --muted: 51 65 85;             /* رمادي متوسط */
+    --muted-foreground: 148 163 184;
+
+    --accent: 51 65 85;
+    --accent-foreground: 241 245 249;
+
+    /* ألوان الحالة للوضع المظلم */
+    --destructive: 248 113 113;    /* أحمر فاتح */
+    --destructive-foreground: 15 23 42;
+
+    --warning: 251 191 36;         /* أصفر ذهبي */
+    --warning-foreground: 15 23 42;
+
+    --success: 74 222 128;         /* أخضر فاتح */
+    --success-foreground: 15 23 42;
+
+    --info: 99 102 241;            /* بنفسجي معلوماتي */
+    --info-foreground: 255 255 255;
+
+    --border: 51 65 85;            /* رمادي متوسط */
+    --input: 51 65 85;
+    --ring: 99 102 241;
+
+    /* تدرجات للوضع المظلم */
+    --gradient-primary: linear-gradient(135deg, rgb(99 102 241), rgb(139 92 246));
+    --gradient-hero: linear-gradient(135deg, rgb(99 102 241 / 0.9), rgb(139 92 246 / 0.9));
+    --gradient-card: linear-gradient(145deg, rgb(30 41 59), rgb(51 65 85));
+    --gradient-success: linear-gradient(135deg, rgb(74 222 128), rgb(34 197 94));
+    --gradient-warning: linear-gradient(135deg, rgb(251 191 36), rgb(245 158 11));
+    --gradient-info: linear-gradient(135deg, rgb(99 102 241), rgb(67 56 202));
+    --gradient-danger: linear-gradient(135deg, rgb(248 113 113), rgb(239 68 68));
+    
+    /* ظلال للوضع المظلم */
+    --shadow-soft: 0 1px 3px 0 rgb(0 0 0 / 0.2), 0 1px 2px 0 rgb(0 0 0 / 0.06);
+    --shadow-medium: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -1px rgb(0 0 0 / 0.06);
+    --shadow-large: 0 10px 15px -3px rgb(0 0 0 / 0.4), 0 4px 6px -2px rgb(0 0 0 / 0.05);
+    --shadow-glow: 0 0 0 1px rgb(99 102 241 / 0.3), 0 1px 0 0 rgb(99 102 241 / 0.2);
+  }
+
+}
+
+/* رسوم متحركة إبداعية */
+@layer utilities {
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .animate-pulse-soft {
+    animation: pulse-soft 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  .animate-slide-up {
+    animation: slide-up 0.5s ease-out;
+  }
+  
+  .animate-bounce-gentle {
+    animation: bounce-gentle 2s ease-in-out infinite;
+  }
+  
+  .hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-large);
+  }
+  
+  .glass-effect {
+    backdrop-filter: blur(16px);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .dark .glass-effect {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes slide-up {
+  from { 
+    opacity: 0; 
+    transform: translateY(20px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+@keyframes bounce-gentle {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-8px); }
+  60% { transform: translateY(-4px); }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
